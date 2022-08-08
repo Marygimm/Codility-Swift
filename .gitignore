@@ -1,0 +1,78 @@
+## Build generated
+build/
+DerivedData
+.derivedData
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+
+# reporting
+ObjectiveC.gcda
+ObjectiveC.gcno
+.sonar
+sonar-reports
+.DS_Store
+tools
+ui-test-results
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+# Package.resolved
+.build
+Pods
+
+# Fastlane
+/fastlane/test_output
+/fastlane/test_output/*
+/fastlane/report.xml
+/reports
+
+sonarqube-generic-coverage.xml
+BackbaseAppCore.xcarchive
+.scannerwork
+
+ragnarok-us-app/AppConfiguration/Variants/qa-automation.xcconfig
+
+## KYCJourney
+KYCJourney.xcscheme
+Journeys/KYC/KYCJourney.xcodeproj/
+Journeys/KYC/KYCJourney.xcworkspace/
+Podfile.lock
+Flow.xcworkspace/xcuserdata
+Flow.xcodeproj/xcuserdata/mac.xcuserdatad
+Pods/*
+*.lock*
+Journeys/OpenBankingPSD2/PSD2AccountJourney.xcodeproj/project.pbxproj
+Journeys/OpenBankingPSD2/PSD2AccountJourney.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Journeys/OpenBankingPSD2/PSD2AccountJourney.xcworkspace/contents.xcworkspacedata
+Journeys/OpenBankingPSD2/PSD2AccountJourney.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Journeys/OpenBankingPSD2/PSD2AccountJourney.xcodeproj/xcuserdata
+Journeys/OpenBankingPSD2/PSD2AccountJourney.xcworkspace/xcuserdata
+Flow.xcworkspace
+Flow.xcodeproj
