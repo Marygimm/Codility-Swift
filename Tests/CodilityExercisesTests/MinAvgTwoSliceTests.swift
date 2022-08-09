@@ -55,8 +55,18 @@ final class MinAvgTwoSliceTests: XCTestCase {
     
     func test() {
         var arrayTest1 = [4,2,2,5,1,5,8]
+        var arrayTest2 = [3,4,2,6]
+        var arrayTest3 = [3,4,-2,1]
+        var arrayTest4 = [3,4,1,-2]
+
+
         
-        XCTAssertEqual(MinAvgTwoSlice.testa(&arrayTest1), 1)
+        XCTAssertEqual(MinAvgTwoSlice.solution(&arrayTest1), 1)
+        XCTAssertEqual(MinAvgTwoSlice.solution(&arrayTest2), 0)
+        XCTAssertEqual(MinAvgTwoSlice.solution(&arrayTest3), 2)
+        XCTAssertEqual(MinAvgTwoSlice.solution(&arrayTest4), 2)
+
+
     }
     
 }
