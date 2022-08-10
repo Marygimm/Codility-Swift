@@ -16,9 +16,9 @@ struct Dominator {
         
         let onlyDuplicatesHigher = counts.filter { $0.value > halfOfTheArray }.map { $0 }
         
-        guard let index = onlyDuplicatesHigher.first?.key else { return 0}
+        guard let index = onlyDuplicatesHigher.first?.key else { return -1}
 
-        return A.allIndices(of: index).randomElement() ?? 0
+        return A.allIndices(of: index).randomElement() ?? -1
     }
 }
 

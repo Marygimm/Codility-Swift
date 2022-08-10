@@ -44,8 +44,8 @@ struct EquiLeader {
             }
         }
         return equiLeaders
-    
-}
+        
+    }
 }
 
 
