@@ -27,6 +27,7 @@ struct Brackets {
     }
     
     static func checkIfAreCorrespondingElement(array: [String]) -> Bool {
+        guard array.count == 2 else { return false }
         if array.first == "{" {
             return array.last == "}"
         } else if array.first == "["{
