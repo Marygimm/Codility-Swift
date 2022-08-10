@@ -17,15 +17,16 @@ struct NumberOfDiscIntersections {
             listOfFinalXValues[x] = calculateAllXPositionsOfCircle(position: x, radius: radius)
         }
         
-        listOfFinalXValues.forEach { _, values in
+        listOfFinalXValues.forEach { key, values in
             listOfFinalXValues.forEach { _, values2 in
-                if values.intersects(with: values2), values != values2 {
+                if values.intersects(with: values2), !values.containsSameElements(as: values2){
                     count += 1
+                    
                 }
             }
         }
         
-        
+        // needs to be fixed, when the element has already find him self in another array they cannot find each other again
         return count/2
 
     }
@@ -50,5 +51,11 @@ extension Sequence where Iterator.Element : Hashable {
     {
         let sequenceSet = Set(sequence)
         return self.contains(where: sequenceSet.contains)
+    }
+}
+
+extension Array where Element: Comparable {
+    func containsSameElements(as other: [Element]) -> Bool {
+        return self.count == other.count && self.sorted() == other.sorted()
     }
 }

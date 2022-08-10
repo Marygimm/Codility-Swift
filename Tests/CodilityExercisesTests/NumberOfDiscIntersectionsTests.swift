@@ -38,7 +38,10 @@ import XCTest
 final class NumberOfDiscIntersectionsTests: XCTestCase {
     func test() {
         var arrayTest1 = [1,5,2,1,4,0]
+        var arrayTest2 = [1,2,4]
+        
         
         XCTAssertEqual(NumberOfDiscIntersections.solution(&arrayTest1), 11)
+        XCTAssertEqual(NumberOfDiscIntersections.solution(&arrayTest2), 3)
     }
 }
