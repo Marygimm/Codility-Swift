@@ -21,3 +21,4 @@ struct ChocolatesByNumbers {
             return greatesCommonDivisor(elementOne: elementTwo, elementTwo: elementOne%elementTwo)
         }
     }
+}
