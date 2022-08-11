@@ -10,6 +10,7 @@ import XCTest
 
 final class FlagsTests: XCTestCase {
     func test(){
-        
+        var arrayTest1 = [1,5,3,4,3,4,1,2,3,4,6,2]
+        XCTAssertEqual(Flags.solution(&arrayTest1), 3)
     }
 }
