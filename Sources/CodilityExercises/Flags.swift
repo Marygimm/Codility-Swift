@@ -19,16 +19,29 @@ struct Flags {
             }
             i += 1
         }
-        var diffBetweenMaxAndMinPeaks = 0
-        if let last = peaks.last, let first = peaks.first {
-            diffBetweenMaxAndMinPeaks = last - first
 
-        }
-        
-        //second solution
-        //let sqrt = Int(sqrt(Double(A.count)))
-        //let min = min(sqrt, peaks.count)
-        
-        return Int(sqrt(Double(diffBetweenMaxAndMinPeaks)))
+        guard peaks.count > 0 else { return 0 }
+            
+            var result = min(peaks.count, Int(sqrt(Double(A.count))) + 1)
+            
+            while result >= 1 {
+                var lastFlag = peaks[0]
+                var flagsSet = 1
+                for i in peaks.dropFirst(1) {
+                    if i - lastFlag >= result {
+                        lastFlag = i
+                        flagsSet += 1
+                    }
+                }
+                
+                if flagsSet >= result {
+                    return result
+                } else {
+                    result -= 1
+                }
+            }
+            
+            return result
+ 
     }
 }
