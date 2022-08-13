@@ -71,6 +71,7 @@ struct FibFrog {
         return result == Int.max ? -1 : result
     }
     
+    //needs verification 
     static func solution2(_ A: inout [Int]) -> Int {
         var leafPositions = Set<Int>()
         for i in 0..<A.count where A[i] == 1 { leafPositions.insert(i) }
