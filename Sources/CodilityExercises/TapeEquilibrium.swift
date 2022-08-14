@@ -8,6 +8,8 @@
 import Foundation
 
 struct TapeEquilibrium {
+    
+    // solution with 69% score but 100% of correctness
     static func solution(_ A : inout [Int]) -> Int {
         var recievedArray = A
         guard !recievedArray.isEmpty, recievedArray.count > 1 else { return 0 }
@@ -27,22 +29,27 @@ struct TapeEquilibrium {
         return arrayOfDifferenceAfterSplit.min() ?? 0
         
     }
+    // solution with 100% score
+    
     
     static func solution2(_ A : inout [Int]) -> Int {
-    guard !A.isEmpty, A.count > 1 else { return 0 }
-      var leftSum = A[0]
-      var rightSum = A[1..<A.count].reduce(0, +)
-      var minDiff = abs(leftSum - rightSum)
+        guard A.count > 1 else { return 0 }
+        
+        let totalSum = A.reduce(0,+)
+        var lefSum = 0
+        var minDif = Int.max
+        
+        for i in (0..<A.count-1) {
+            lefSum += A[i]
+            let diff = abs(2*lefSum - totalSum)
+            if diff < minDif {
+                minDif = diff
+            }
 
-      for p in 2..<A.count {
-        leftSum += A[p-1]
-        rightSum -= A[p-1]
-        let diff = abs(leftSum - rightSum)
-        if minDiff > diff {
-          minDiff = diff
         }
-      }
-      return minDiff
-    }    
+        
+        return minDif
+        
+    }
 
 }

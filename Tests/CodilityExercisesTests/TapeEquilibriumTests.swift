@@ -50,7 +50,8 @@ final class TapeEquilibriumTests: XCTestCase {
         XCTAssertEqual(TapeEquilibrium.solution2(&arrayToTest2), 0)
         XCTAssertEqual(TapeEquilibrium.solution2(&arrayToTest3), 2)
         XCTAssertEqual(TapeEquilibrium.solution2(&arrayToTest4), 400)
-
+        
+      
 
 
     }}
