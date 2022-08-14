@@ -48,7 +48,6 @@ struct FrogRiverOne {
         //on the array we should return the max value that was the last leaf saved to help the frog jump
         return arrayB.max() ?? 0
     }
-}
 
 static func solutionForInternet(_ X : Int, _ A : inout [Int]) -> Int {
     
@@ -69,4 +68,6 @@ static func solutionForInternet(_ X : Int, _ A : inout [Int]) -> Int {
     }
     
     return -1
+}
+
 }

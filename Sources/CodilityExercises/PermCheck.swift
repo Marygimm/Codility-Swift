@@ -8,19 +8,20 @@
 import Foundation
 
 struct PermCheck {
-    
-    //The following issues have been detected: wrong answers, runtime errors.
-    
-//    For example, for the input [1, 1] the solution returned a wrong answer (got 1 expected 0).
-    
-        static func solution(_ A : inout [Int]) -> Int {
+
+    static func solution(_ A : inout [Int]) -> Int {
+        guard !A.isEmpty else  { return 0 }
         
-        guard let maxNumberInArray = A.max() else { return 0 }
+        // because it will always start with 1 if we order the sequence we can check that the value will always correspond to index +1 otherwise is not a permutation
+        A = A.sorted {$0 < $1}
         
-        let arrayWithAllNumbers = Set(1...maxNumberInArray)
-        let listSet = Set(A)
-        return arrayWithAllNumbers.isSubset(of: listSet) ? 1 : 0
+        for i in (0..<A.count) {
+            if A[i] != i+1 {
+                return 0
+            }
+        }
+        return 1
+        
     }
-    
     
 }
