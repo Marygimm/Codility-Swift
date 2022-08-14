@@ -39,5 +39,9 @@ final class FrogJmpTests: XCTestCase {
         XCTAssertEqual(FrogJmp.solution(0, 85, 1), 85)
         XCTAssertEqual(FrogJmp.solution(90, 85, 30), 0)
         XCTAssertEqual(FrogJmp.solution(1, 100, 100), 1)
+        XCTAssertEqual(FrogJmp.solution2(10, 85, 30), 3)
+        XCTAssertEqual(FrogJmp.solution2(0, 85, 1), 85)
+        XCTAssertEqual(FrogJmp.solution2(90, 85, 30), 0)
+        XCTAssertEqual(FrogJmp.solution2(1, 100, 100), 1)
         
     }}
