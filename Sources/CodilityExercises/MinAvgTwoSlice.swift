@@ -8,7 +8,7 @@
 import Foundation
 
 struct MinAvgTwoSlice {
-    
+    //For example, for the input [10, 10, -1, 2, 4, -1, 2, -1] the solution returned a wrong answer (got 2 expected 5).
     static func average(numbers: [Int]) -> Double {
         var sum = 0
         for number in numbers {

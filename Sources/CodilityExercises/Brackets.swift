@@ -7,6 +7,7 @@
 
 import Foundation
 
+//FAIL
 struct Brackets {
     static func solution(_ S : inout String) -> Int {
         var arr = S.map { String($0) }

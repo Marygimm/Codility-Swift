@@ -7,6 +7,7 @@
 
 import Foundation
 
+//got [4, 3, 4, 4, 4] expected [4, 3, 4, 2, 2]
 enum Nucleotides: String, CaseIterable {
     case A
     case C

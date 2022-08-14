@@ -7,6 +7,7 @@
 
 import Foundation
 
+//For example, for the input [2, 3, 2, 1] the solution returned a wrong answer (got 4 expected 3).
 struct StoneWall {
     static func solution(_ H : inout [Int]) -> Int {
         var arrayOfDifElements = [Int]()

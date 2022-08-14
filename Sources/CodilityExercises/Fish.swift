@@ -7,6 +7,7 @@
 
 import Foundation
 
+//FAIL
 struct Fish {
     static func solution(_ A : inout [Int], _ B : inout [Int]) -> Int {
         

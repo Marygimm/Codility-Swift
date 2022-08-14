@@ -9,6 +9,10 @@ import Foundation
 
 struct MissingInteger {
     
+    //The following issues have been detected: wrong answers, timeout errors.
+    
+//    For example, for the input [2] the solution returned a wrong answer (got 3 expected 1).
+    
     static func solution(_ A : inout [Int]) -> Int {
         guard let maxNumber = A.max(), maxNumber > 0 else { return 1 }
         let sortedArray = A.sorted { $0 < $1 }.removeDuplicates()

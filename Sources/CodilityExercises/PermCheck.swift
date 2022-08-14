@@ -9,7 +9,11 @@ import Foundation
 
 struct PermCheck {
     
-    static func solution(_ A : inout [Int]) -> Int {
+    //The following issues have been detected: wrong answers, runtime errors.
+    
+//    For example, for the input [1, 1] the solution returned a wrong answer (got 1 expected 0).
+    
+        static func solution(_ A : inout [Int]) -> Int {
         
         guard let maxNumberInArray = A.max() else { return 0 }
         

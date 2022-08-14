@@ -8,6 +8,7 @@
 import Foundation
 
 struct PermMissingElem {
+    // we have no algorithms package on codility, use solution 2
     static func solution(_ A : inout [Int]) -> Int {
         // we should sort also to make sure the calculations are correct
         let set = A.uniqued().sorted { $0 < $1 }

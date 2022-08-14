@@ -28,8 +28,7 @@ final class OddOccurrencesInArrayTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
         var arrayToTest1 = [9,3,9,3,9,7,9]
-        var arrayToTest2 = [9,3,9,5,9,9,9]
-        var arrayToTest3 = [1,1,1,4,5,5,5]
+        var arrayToTest2 = [9,3,3,9,5,9,9]
         var arrayToTest4 = [1]
         var arrayToTest5 = [1,2,1]
         var arrayToTest6 = [1,2,1,1,1]
@@ -37,15 +36,13 @@ final class OddOccurrencesInArrayTests: XCTestCase {
 
         XCTAssertEqual(OddOccurrencesInArray.unpairElement(&arrayToTest1), 7)
         XCTAssertEqual(OddOccurrencesInArray.unpairElement(&arrayToTest2), 5)
-        XCTAssertEqual(OddOccurrencesInArray.unpairElement(&arrayToTest3), 4)
         XCTAssertEqual(OddOccurrencesInArray.unpairElement(&arrayToTest4), 1)
         XCTAssertEqual(OddOccurrencesInArray.unpairElement(&arrayToTest5), 2)
         XCTAssertEqual(OddOccurrencesInArray.unpairElement(&arrayToTest6), 2)
-        
-        var stringSelected = "CAGCCTA"
-        var arrayP = [2,5,0]
-        var arrayQ = [4,5,6]
-        
-        XCTAssertEqual(GenomicRangeQuery.solution(&stringSelected, &arrayP, &arrayQ), [2,4,1])
+        XCTAssertEqual(OddOccurrencesInArray.solution(&arrayToTest1), 7)
+        XCTAssertEqual(OddOccurrencesInArray.solution(&arrayToTest2), 5)
+        XCTAssertEqual(OddOccurrencesInArray.solution(&arrayToTest4), 1)
+        XCTAssertEqual(OddOccurrencesInArray.solution(&arrayToTest5), 2)
+        XCTAssertEqual(OddOccurrencesInArray.solution(&arrayToTest6), 2)
     }
 }
