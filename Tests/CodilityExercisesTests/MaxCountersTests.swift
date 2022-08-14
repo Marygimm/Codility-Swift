@@ -62,6 +62,6 @@ final class MaxCountersTests: XCTestCase {
         var arrayTest = [3,4,4,6,1,4,4]
         let resultTest = [3,2,2,4,2]
         
-        XCTAssertEqual(MaxCounters.solution(5, &arrayTest), resultTest)
+        XCTAssertEqual(MaxCounters.solution2(5, &arrayTest), resultTest)
     }
 }
