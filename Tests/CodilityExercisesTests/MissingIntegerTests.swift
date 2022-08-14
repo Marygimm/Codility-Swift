@@ -35,7 +35,7 @@ final class MissingIntegerTests: XCTestCase {
         var testArray2 = [-1, -3]
         var testArray3 = [1, 3, 6, 4, 1, 2]
         var testArray4 = [1,3,6,6,7,3, 1, 2]
-        var testArray5 = [2,4,6,8]
+        var testArray6 = [2]
 
         
        
@@ -43,7 +43,7 @@ final class MissingIntegerTests: XCTestCase {
         XCTAssertEqual(MissingInteger.solution(&testArray2), 1)
         XCTAssertEqual(MissingInteger.solution(&testArray3), 5)
         XCTAssertEqual(MissingInteger.solution(&testArray4), 4)
-        XCTAssertEqual(MissingInteger.solution(&testArray5), 3)
+        XCTAssertEqual(MissingInteger.solution(&testArray6), 1)
         
     }
 }
