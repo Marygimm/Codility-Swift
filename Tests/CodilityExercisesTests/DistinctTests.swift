@@ -33,5 +33,7 @@ final class DistinctTests: XCTestCase {
         var arrayTest1 = [2,1,1,2,3,1]
     
         XCTAssertEqual(Distinct.solution(&arrayTest1), 3)
+        XCTAssertEqual(Distinct.solution2(&arrayTest1), 3)
+
     }
 }
