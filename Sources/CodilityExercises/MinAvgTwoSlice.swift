@@ -8,29 +8,41 @@
 import Foundation
 
 struct MinAvgTwoSlice {
-    //For example, for the input [10, 10, -1, 2, 4, -1, 2, -1] the solution returned a wrong answer (got 2 expected 5).
-    static func average(numbers: [Int]) -> Double {
+    static func average(numbers: [Int]) -> Float {
         var sum = 0
         for number in numbers {
             sum += number
         }
-        let  ave : Double = Double(sum) / Double(numbers.count)
+        let  ave : Float = Float(sum) / Float(numbers.count)
         return ave
     }
     
     static func solution(_ A : inout [Int]) -> Int {
-        var lessAverageIndex = 0
-        // enumerated new array and save previous index for the correct position of the received array
-        let sortedElementsWithPreviousIndex = A.enumerated().sorted {$0.element < $1.element}
+   
+        var startIndex = 0
+        var minimum: Float = Float(Int.max)
         
-        //always the two first elements of the array will be the smaller so the average will be also
-        if let firstElementIndex = sortedElementsWithPreviousIndex.first?.offset {
-           let secondElementIndex = sortedElementsWithPreviousIndex[1].offset
-            //between two sizes we should compare min value and return
-            lessAverageIndex = min(firstElementIndex,secondElementIndex)
+        // we are going to iterate and check the average of the first 2 elements and the first 3 elements and we are keeping the index and the minAverage between this two
+        for i in (0..<A.count-2) {
+           let firstCreatedArray = [A[i],A[i+1],A[i+2]]
+           let secondCreatedArray = [A[i],A[i+1]]
+            let firstAverage = average(numbers: firstCreatedArray)
+            let secondAverage = average(numbers: secondCreatedArray)
+            
+            if minimum > firstAverage || minimum > secondAverage {
+                minimum = min(firstAverage,secondAverage)
+                startIndex = i
+            }
+            
         }
         
-        return lessAverageIndex
+        //because we iterate in A.count-2 we should evaluate if the last slice contain a smaller average than previous
+        let averageOfLastTwoElements = average(numbers: [A[A.count-1], A[A.count-2]])
+        if minimum > averageOfLastTwoElements {
+            return A.count-2
+        }
+        
+        return startIndex
         
     }
     
