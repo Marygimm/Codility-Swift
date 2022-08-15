@@ -27,6 +27,10 @@ final class CountDivTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
         XCTAssertEqual(CountDiv.solution(6, 11, 2), 3)
+        XCTAssertEqual(CountDiv.solution2(6, 11, 2), 3)
+        XCTAssertEqual(CountDiv.solution2(0, 10, 2), 6)
+
+
 
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct CountDiv {
-    
+    //solution with 100% correctness but 50% of total score
     static func solution(_ A : Int, _ B : Int, _ K : Int) -> Int {
         guard K > 0, A <= B else{ return 0 }
         
@@ -23,6 +23,22 @@ struct CountDiv {
         
         return countElements
     }
+    
+    //solution with 100%
+    static func solution2(_ A : Int, _ B : Int, _ K : Int) -> Int {
+        
+        //computing time always constant
+        /**
+         how many times do we need to add K to A in order to get/exceed B (numberOfTimes x K) >= B
+         the number of divisibles between two edges is the diff between them
+         */
+        var divisibleNumbers = (B/K) - (A/K)
+        
+        if A%K == 0 {
+            divisibleNumbers += 1
+        }
 
+        return divisibleNumbers
+    }
 
 }
