@@ -8,24 +8,24 @@
 import Foundation
 
 struct Nesting {
-    //The following issues have been detected: wrong answers, timeout errors.
-    
-//    For example, for the input '' the solution returned a wrong answer (got 0 expected 1).
-    static func solution(_ S : inout String) -> Int {
-        var arr = S.map { String($0) }
-        guard arr.count % 2 == 0, arr.count >= 4 else { return 0 }
 
-        var areTheStringNested: Bool = false
-        
-        
-        while !arr.isEmpty {
-            if let lastElement = arr.popLast() {
-//                areTheStringNested = Brackets.checkIfAreCorrespondingElement(array: [arr.removeFirst(), lastElement])
-                if !areTheStringNested {
-                    break
-                }
+    static func solution(_ S : inout String) -> Int {
+        let arr = S.map { String($0) }
+        if arr.isEmpty {
+            return 1
+        }
+        var counter = 0
+        for i in (0..<arr.count) {
+            if arr[i] == "(" {
+                counter += 1
+            } else if arr[i] == ")" {
+                counter -= 1
+            }
+            if counter < 0 {
+                return 0
             }
         }
-        return areTheStringNested ? 1 : 0
+        
+        return counter == 0 ? 1 : 0
     }
 }

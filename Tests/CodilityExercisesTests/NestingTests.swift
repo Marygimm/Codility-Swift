@@ -35,9 +35,12 @@ final class NestingTests: XCTestCase {
     func test() {
         var stringToTest = "(()(())())"
         var stringToTest2 = "())"
+        var stringToTest2 = ""
+
 
         
         XCTAssertEqual(Nesting.solution(&stringToTest), 1)
         XCTAssertEqual(Nesting.solution(&stringToTest2), 0)
+        XCTAssertEqual(Nesting.solution(&stringToTest3), 1)
     }
 }
