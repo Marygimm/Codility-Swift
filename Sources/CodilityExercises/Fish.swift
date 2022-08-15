@@ -7,40 +7,28 @@
 
 import Foundation
 
-//FAIL
 struct Fish {
     static func solution(_ A : inout [Int], _ B : inout [Int]) -> Int {
         
-        while B.removeDuplicates().count != 1 {
-            guard let index = B.firstIndex(of: 1) else { return A.count }
-            let indexOfStartingFish = index
-            let indexAfterStartingFish = index + 1
-            let startingEatingFish = A[indexOfStartingFish]
-            let sizeOfSecondFish = A[indexAfterStartingFish]
-            let directionA = B[indexOfStartingFish]
-            let directionB = B[indexAfterStartingFish]
-            if directionA != directionB {
-                let shouldWeRemoveFirstFish = startingEatingFish < sizeOfSecondFish
-                let indexToRemove = shouldWeRemoveFirstFish ? indexOfStartingFish : indexAfterStartingFish
-                A.remove(at: indexToRemove)
-                B.remove(at: indexToRemove)
+        var counter = 0
+        var downStreamFishSize = [Int]()
+        
+        for i in (0..<B.count) {
+            if B[i] == 1 {
+                downStreamFishSize.append(A[i])
+            }
+            else {
+                while !downStreamFishSize.isEmpty {
+                    if let last = downStreamFishSize.last, last > A[i] {
+                        counter += 1
+                        break
+                    } else if let last = downStreamFishSize.last, last < A[i] {
+                        counter += 1
+                        downStreamFishSize.popLast()
+                    }
+                }
             }
         }
-        return A.count
-    }
-}
-extension Array where Element:Equatable {
-    func removeDuplicates() -> [Element] {
-        var result = [Element]()
-        
-        for value in self {
-            if result.contains(value) == false {
-                result.append(value)
-                
-            }
-            
-        }
-        return result
-        
+        return A.count - counter
     }
 }

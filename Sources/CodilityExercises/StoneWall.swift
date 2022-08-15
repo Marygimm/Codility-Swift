@@ -7,21 +7,35 @@
 
 import Foundation
 
-//For example, for the input [2, 3, 2, 1] the solution returned a wrong answer (got 4 expected 3).
 struct StoneWall {
     static func solution(_ H : inout [Int]) -> Int {
-        var arrayOfDifElements = [Int]()
-        var countNumberOfBlocks = 0
-        H.forEach { element in
-            while !arrayOfDifElements.isEmpty, let lastElement = arrayOfDifElements.last, element > lastElement {
-                arrayOfDifElements.popLast()
+        var stack: [Int] = []
+            
+            var result = 0
+            var lastHeight = 0
+            
+            for h in H {
+                if h < lastHeight {
+                    while stack.count > 0 {
+                        if h < stack[stack.count - 1] {
+                            stack.remove(at: stack.count - 1)
+                            result += 1
+                        } else if h == stack[stack.count - 1] {
+                            stack.remove(at: stack.count - 1)
+                            break
+                        } else {
+                            break
+                        }
+                    }
+                    
+                    stack.append(h)
+                } else if h > lastHeight {
+                    stack.append(h)
+                }
+                
+                lastHeight = h
             }
             
-            if !arrayOfDifElements.contains(element) {
-                countNumberOfBlocks += 1
-                arrayOfDifElements.append(element)
-            }
-        }
-        return countNumberOfBlocks
+            return result + stack.count
     }
 }

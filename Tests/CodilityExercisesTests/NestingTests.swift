@@ -35,7 +35,7 @@ final class NestingTests: XCTestCase {
     func test() {
         var stringToTest = "(()(())())"
         var stringToTest2 = "())"
-        var stringToTest2 = ""
+        var stringToTest3 = ""
 
 
         
