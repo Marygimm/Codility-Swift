@@ -20,7 +20,7 @@ struct Nesting {
         
         while !arr.isEmpty {
             if let lastElement = arr.popLast() {
-                areTheStringNested = Brackets.checkIfAreCorrespondingElement(array: [arr.removeFirst(), lastElement])
+//                areTheStringNested = Brackets.checkIfAreCorrespondingElement(array: [arr.removeFirst(), lastElement])
                 if !areTheStringNested {
                     break
                 }

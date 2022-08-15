@@ -38,6 +38,7 @@ final class BracketsTests: XCTestCase {
         var stringToTest4 = "{[]}"
         var stringToTest5 = "{}"
         var stringToTest6 = "[(]]"
+        var stringToTest7 = "((]()]"
 
 
         
@@ -45,8 +46,9 @@ final class BracketsTests: XCTestCase {
         XCTAssertEqual(Brackets.solution(&stringToTest2), 0)
         XCTAssertEqual(Brackets.solution(&stringToTest3), 1)
         XCTAssertEqual(Brackets.solution(&stringToTest4), 1)
-        XCTAssertEqual(Brackets.solution(&stringToTest5), 0)
+        XCTAssertEqual(Brackets.solution(&stringToTest5), 1)
         XCTAssertEqual(Brackets.solution(&stringToTest6), 0)
+        XCTAssertEqual(Brackets.solution(&stringToTest7), 0)
 
 
     }
