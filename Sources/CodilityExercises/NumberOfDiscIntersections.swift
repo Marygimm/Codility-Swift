@@ -10,52 +10,39 @@ import Foundation
 struct NumberOfDiscIntersections {
     static func solution(_ A : inout [Int]) -> Int {
         
-        var listOfFinalXValues = [Int:[Int]]()
-        var count = 0
+        guard !A.isEmpty else { return 0 }
         
-        for (x, radius) in A.enumerated() {
-            listOfFinalXValues[x] = calculateAllXPositionsOfCircle(position: x, radius: radius)
-        }
+        var start = Array(repeating: 0, count: A.count)
         
-        listOfFinalXValues.forEach { key, values in
-            listOfFinalXValues.forEach { _, values2 in
-                if values.intersects(with: values2), !values.containsSameElements(as: values2){
-                    count += 1
-                    
-                }
+        for i in (0..<A.count) {
+            let radius = A[i]
+            var startPos = i - radius
+            
+            if startPos < 0 {
+                startPos = 0
             }
+            
+            start[startPos] += 1
+        }
+        var total = 0
+        for i in (0..<start.count) {
+            total += start[i]
+            start[i] = total
+        }
+        var totalIntersections = 0
+        for i in (0..<A.count) {
+            let radius = A[i]
+            var endPos = i+radius
+            if endPos > A.count-1 {
+                endPos = A.count-1
+            }
+            let intersections = max(start[i], start[endPos]) - (i+1)
+            totalIntersections += intersections
         }
         
-        // needs to be fixed, when the element has already find him self in another array they cannot find each other again
-        return count/2
-
+        
+        return totalIntersections > 10000000 ? -1 : totalIntersections
+ 
     }
     
-    
-    static func calculateAllXPositionsOfCircle(position x: Int, radius: Int) -> [Int] {
-        let value = radius + x
-        let second = x - radius
-        
-        let positive = Array(second...value)
-
-        
-        return positive
-    }
-
-}
-
-extension Sequence where Iterator.Element : Hashable {
-
-    func intersects<S : Sequence>(with sequence: S) -> Bool
-        where S.Iterator.Element == Iterator.Element
-    {
-        let sequenceSet = Set(sequence)
-        return self.contains(where: sequenceSet.contains)
-    }
-}
-
-extension Array where Element: Comparable {
-    func containsSameElements(as other: [Element]) -> Bool {
-        return self.count == other.count && self.sorted() == other.sorted()
-    }
 }
