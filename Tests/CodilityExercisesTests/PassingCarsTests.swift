@@ -48,6 +48,6 @@ final class PassingCarsTests: XCTestCase {
         var arrayTest1 = [0,1,0,1,1]
 
         
-        XCTAssertEqual(PassingCars.solution(&arrayTest1), 5)
+        XCTAssertEqual(PassingCars.solution2(&arrayTest1), 5)
     }
 }
