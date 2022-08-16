@@ -61,5 +61,7 @@ final class MaxDoubleSliceSumTests: XCTestCase {
         var arrayTest1 = [3,2,6,-1,4,5,-1,2]
         
         XCTAssertEqual(MaxDoubleSliceSum.solution(&arrayTest1), 17)
+        XCTAssertEqual(MaxDoubleSliceSum.solution2(&arrayTest1), 17)
+
     }
 }

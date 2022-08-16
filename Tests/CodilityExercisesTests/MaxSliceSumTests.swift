@@ -14,5 +14,7 @@ final class MaxSliceSumTests: XCTestCase {
         var arrayToTest = [3,2,-6,4,0]
         
         XCTAssertEqual(MaxSliceSum.solution(&arrayToTest), 5)
+        XCTAssertEqual(MaxSliceSum.solution2(&arrayToTest), 5)
+
     }
 }

@@ -13,5 +13,7 @@ final class EquiLeaderTests: XCTestCase {
         var arrayTest1 = [4,3,4,4,4,2]
         
         XCTAssertEqual(EquiLeader.solution(&arrayTest1), 2)
+        XCTAssertEqual(EquiLeader.solution2(&arrayTest1), 2)
+
     }
 }
