@@ -13,6 +13,7 @@ final class MinPerimeterRectangleTests: XCTestCase {
         XCTAssertEqual(MinPerimeterRectangle.solution(30), 22)
         XCTAssertEqual(MinPerimeterRectangle.solution2(30), 22)
 
+
     }
 }
 
