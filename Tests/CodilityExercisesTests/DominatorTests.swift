@@ -42,6 +42,8 @@ final class DominatorTests: XCTestCase {
         var arrayTest1 = [3,4,3,2,3,-1,3,3]
         var possibleValues = [0,2,4,6,7]
         let solution = Dominator.solution(&arrayTest1)
+        let solution2 = Dominator.solution2(&arrayTest1)
         XCTAssertEqual(possibleValues.contains(solution), true)
+        XCTAssertEqual(possibleValues.contains(solution2), true)
     }
 }
