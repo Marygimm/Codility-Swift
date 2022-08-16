@@ -47,32 +47,4 @@ playground.xcworkspace
 .build
 Pods
 
-# Fastlane
-/fastlane/test_output
-/fastlane/test_output/*
-/fastlane/report.xml
-/reports
 
-sonarqube-generic-coverage.xml
-BackbaseAppCore.xcarchive
-.scannerwork
-
-ragnarok-us-app/AppConfiguration/Variants/qa-automation.xcconfig
-
-## KYCJourney
-KYCJourney.xcscheme
-Journeys/KYC/KYCJourney.xcodeproj/
-Journeys/KYC/KYCJourney.xcworkspace/
-Podfile.lock
-Flow.xcworkspace/xcuserdata
-Flow.xcodeproj/xcuserdata/mac.xcuserdatad
-Pods/*
-*.lock*
-Journeys/OpenBankingPSD2/PSD2AccountJourney.xcodeproj/project.pbxproj
-Journeys/OpenBankingPSD2/PSD2AccountJourney.xcodeproj/project.xcworkspace/contents.xcworkspacedata
-Journeys/OpenBankingPSD2/PSD2AccountJourney.xcworkspace/contents.xcworkspacedata
-Journeys/OpenBankingPSD2/PSD2AccountJourney.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
-Journeys/OpenBankingPSD2/PSD2AccountJourney.xcodeproj/xcuserdata
-Journeys/OpenBankingPSD2/PSD2AccountJourney.xcworkspace/xcuserdata
-Flow.xcworkspace
-Flow.xcodeproj
