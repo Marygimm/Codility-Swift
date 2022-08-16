@@ -12,5 +12,6 @@ final class CountFactorsTests: XCTestCase {
     func test(){
         
         XCTAssertEqual(CountFactors.solution(24), 8)
+
     }
 }
