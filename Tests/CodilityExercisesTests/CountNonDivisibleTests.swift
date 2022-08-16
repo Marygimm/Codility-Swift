@@ -15,7 +15,7 @@ final class CountNonDivisibleTests:XCTestCase {
         let result1 = [2,4,3,2,0]
         let result2 = [1,1]
         
-//        XCTAssertEqual(CountNonDivisible.solution(&arrayTest1), result1)
-        XCTAssertEqual(CountNonDivisible.solution(&arrayTest2), result2)
+        XCTAssertEqual(CountNonDivisible.solution(&arrayTest1), result1)
+        XCTAssertEqual(CountNonDivisible.solution3(&arrayTest1), result1)
     }
 }

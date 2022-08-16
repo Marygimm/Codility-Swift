@@ -73,4 +73,32 @@ struct CountNonDivisible {
         return array
         
     }
+    
+    static func solution3(_ A : inout [Int]) -> [Int] {
+        
+        guard let maxElement = A.max() else { return [Int]()}
+        var counts = Array(repeating: 0, count: maxElement+1)
+        var result = [Int]()
+        
+        for i in (0..<A.count) {
+            counts[A[i]] += 1
+        }
+        
+        for i in (0..<A.count) {
+            var sum = 0
+            for j in (1...A.count) {
+                if j*j > A[i] {
+                    break
+                }
+                if A[i] % j == 0 {
+                    sum += counts[j]
+                    if (A[i]/j != j){
+                        sum += counts[A[i]/j]
+                    }
+                }
+            }
+            result.append(A.count - sum)
+        }
+        return result
+    }
 }
