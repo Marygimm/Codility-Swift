@@ -19,8 +19,8 @@ final class ParkingBillTests: XCTestCase {
         var hour7 = "01:33"
         var hour8 = "22:00"
 
-//        XCTAssertEqual(ParkingBill.solution(&hour1, &hour2), 17)
-//        XCTAssertEqual(ParkingBill.solution(&hour3, &hour4), 5)
+        XCTAssertEqual(ParkingBill.solution(&hour1, &hour2), 17)
+        XCTAssertEqual(ParkingBill.solution(&hour3, &hour4), 5)
         XCTAssertEqual(ParkingBill.solution(&hour5, &hour6), 97)
         XCTAssertEqual(ParkingBill.solution(&hour7, &hour8), 85)
 
