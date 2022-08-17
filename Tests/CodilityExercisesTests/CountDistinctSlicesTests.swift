@@ -13,6 +13,7 @@ final class CountDistinctSlicesTests: XCTestCase {
         var arrayTest1 = [3,4,5,5,2]
         
         XCTAssertEqual(CountDistinctSlices.solution(6, &arrayTest1), 9)
+
     }
 }
 

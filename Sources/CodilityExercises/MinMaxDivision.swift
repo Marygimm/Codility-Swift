@@ -9,14 +9,9 @@ import Foundation
 
 struct MinMaxDivision {
     static func solution(_ K : Int, _ M : Int, _ A : inout [Int]) -> Int {
-        var minValue = 0
-        var maxValue = 0
-        
-        
-        for element in A {
-            maxValue += element
-            minValue = max(element, minValue)
-        }
+        var minValue = A.max() ?? 0
+        var maxValue = A.reduce(0,+)
+
         var bestAnswer = maxValue
 
         while (minValue <= maxValue) {
@@ -40,6 +35,7 @@ struct MinMaxDivision {
         var blocks = 1
         var blockSum = 0
         
+        //we are going to check the value of each element and sum to check if it overloads the mid value when it overloads he creates another block
         for element in array {
             blockSum += element
             if blockSum > guess {

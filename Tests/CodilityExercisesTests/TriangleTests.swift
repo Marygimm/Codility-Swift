@@ -50,5 +50,6 @@ final class TriangleTests: XCTestCase {
         
         XCTAssertEqual(Triangle.solution(&arrayTest1), 1)
         XCTAssertEqual(Triangle.solution(&arrayTest2), 0)
+        
     }
 }
