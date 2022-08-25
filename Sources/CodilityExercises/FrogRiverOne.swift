@@ -12,11 +12,11 @@ struct FrogRiverOne {
     //task score 81% correctness 100%
     static func solution(_ X : Int, _ A : inout [Int]) -> Int {
         
-        var arrayWithSumOfValues = Array(1..<X+1)
+        var arrayWithSumOfValues = Array(1...X)
         var finalValueToReturn = -1
         
         
-        for (index, value) in zip(A.indices, A) {
+        for (index, value) in A.enumerated() {
             
             if let index = arrayWithSumOfValues.firstIndex(of: value) {
                 arrayWithSumOfValues.remove(at: index)
@@ -69,5 +69,6 @@ static func solutionForInternet(_ X : Int, _ A : inout [Int]) -> Int {
     
     return -1
 }
-
+    
+    
 }
