@@ -35,9 +35,7 @@ final class PermMissingElemTests: XCTestCase {
     func test() {
         
         var arrayToTest1 = [1,2,3,5]
-        var arrayToTest3 = [1,2]
-        var arrayToTest4 = [1,1,2,2,3,3,5,5]
-        var arrayToTest5 = [2,3,1,5]
+        var arrayToTest3 = [4, 2, 3, 5, 1, 6, 8, 9]
         var arrayToTest6 = [1,2,3,4,5,6,7,9]
         var arrayToTest7 = [1,3,4,5,6,7]
 
@@ -45,9 +43,7 @@ final class PermMissingElemTests: XCTestCase {
 
         // mine solution
         XCTAssertEqual(PermMissingElem.solution(&arrayToTest1), 4)
-        XCTAssertEqual(PermMissingElem.solution(&arrayToTest3), 0)
-        XCTAssertEqual(PermMissingElem.solution(&arrayToTest4), 4)
-        XCTAssertEqual(PermMissingElem.solution(&arrayToTest5), 4)
+        XCTAssertEqual(PermMissingElem.solution(&arrayToTest3), 7)
         XCTAssertEqual(PermMissingElem.solution(&arrayToTest6), 8)
         XCTAssertEqual(PermMissingElem.solution(&arrayToTest7), 2)
         

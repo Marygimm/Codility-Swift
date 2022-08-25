@@ -34,11 +34,6 @@ final class OddOccurrencesInArrayTests: XCTestCase {
         var arrayToTest6 = [1,2,1,1,1]
 
 
-        XCTAssertEqual(OddOccurrencesInArray.unpairElement(&arrayToTest1), 7)
-        XCTAssertEqual(OddOccurrencesInArray.unpairElement(&arrayToTest2), 5)
-        XCTAssertEqual(OddOccurrencesInArray.unpairElement(&arrayToTest4), 1)
-        XCTAssertEqual(OddOccurrencesInArray.unpairElement(&arrayToTest5), 2)
-        XCTAssertEqual(OddOccurrencesInArray.unpairElement(&arrayToTest6), 2)
         XCTAssertEqual(OddOccurrencesInArray.solution(&arrayToTest1), 7)
         XCTAssertEqual(OddOccurrencesInArray.solution(&arrayToTest2), 5)
         XCTAssertEqual(OddOccurrencesInArray.solution(&arrayToTest4), 1)

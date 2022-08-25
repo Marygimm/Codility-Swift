@@ -11,18 +11,16 @@ struct PermMissingElem {
     // we have no algorithms package on codility, use solution 2
     static func solution(_ A : inout [Int]) -> Int {
         // we should sort also to make sure the calculations are correct
-        let set = A.uniqued().sorted { $0 < $1 }
-        guard set.count >= 3 else { return 0 }
-        var finalValue = 0
-        let diferenceBetweenTwoElement = 1
+        let set = A.sorted { $0 < $1 }
+        guard !A.isEmpty, A.contains(1) else { return 1 }
         
-        for i in 0 ..< set.count - 1 {
-            if set[i + 1] - set[i] != diferenceBetweenTwoElement {
-                finalValue = set[i] + diferenceBetweenTwoElement
+        for i in 0..<set.count{
+            if set[i] != i+1 {
+                return i+1
             }
         }
         
-        return  finalValue
+        return set[set.count-1] + 1
     }
     
     static func solution2(_ A : inout [Int]) -> Int {
@@ -31,4 +29,6 @@ struct PermMissingElem {
         
         return sumOfArrayWithMissingElement - sumOfInputArray
     }
+    
+    
 }
