@@ -48,6 +48,11 @@ final class FrogRiverOneTests: XCTestCase {
         XCTAssertEqual(FrogRiverOne.solution2(5, &arrayTest2), 6)
         XCTAssertEqual(FrogRiverOne.solution2(3, &arrayTest1), 4)
         XCTAssertEqual(FrogRiverOne.solution2(5, &arrayTest3), -1)
+        XCTAssertEqual(FrogRiverOne.solution3(5, &arrayTest2), 6)
+        XCTAssertEqual(FrogRiverOne.solution3(3, &arrayTest1), 4)
+        XCTAssertEqual(FrogRiverOne.solution3(5, &arrayTest3), -1)
+        
+        
         
         XCTAssertEqual(FrogRiverOne.solutionForInternet(5, &arrayTest2), 6)
         XCTAssertEqual(FrogRiverOne.solutionForInternet(3, &arrayTest1), 4)

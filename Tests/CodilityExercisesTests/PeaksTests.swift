@@ -14,5 +14,7 @@ final class PeaksTests: XCTestCase {
         var arrayTest1 = [1,2,3,4,3,4,1,2,3,4,6,2]
         
         XCTAssertEqual(Peaks.solution2(&arrayTest1), 3)
+        XCTAssertEqual(Peaks.solution(&arrayTest1), 3)
+        
     }
 }

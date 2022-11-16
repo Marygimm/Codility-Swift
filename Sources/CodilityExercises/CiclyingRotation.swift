@@ -7,6 +7,7 @@
 
 struct CiclyingRotation {
     
+    // treat like a stack and pop off first and add to end
     static func solutionCiclying(_ A : inout [Int], _ K : Int) -> [Int] {
         
         if A.isEmpty || K == 0 || A.count == K {

@@ -9,8 +9,26 @@ import Foundation
 
 struct FrogRiverOne {
     
-    //task score 81% correctness 100%
+    //task score 81% correctness 100% perfomance 60%
+
     static func solution(_ X : Int, _ A : inout [Int]) -> Int {
+        var positions = Array(repeating: false, count: X+1)
+        positions[0] = true
+        
+        for i in 0..<A.count {
+            if A[i] < positions.count {
+                positions[A[i]] = true
+            }
+            
+            if !positions.contains(false) {
+                return i
+            }
+        }
+        return -1
+    }
+    
+    //task score 81% correctness 100%
+    static func solution2(_ X : Int, _ A : inout [Int]) -> Int {
         
         var arrayWithSumOfValues = Array(1...X)
         var finalValueToReturn = -1
@@ -33,7 +51,7 @@ struct FrogRiverOne {
     
     
     //task score 100%
-    static func solution2(_ X : Int, _ A : inout [Int]) -> Int {
+    static func solution3(_ X : Int, _ A : inout [Int]) -> Int {
         var arrayB = Array(repeating: -1, count: X)
         // so we should create an array with -1 (dont have a leaf for that position) until X
         

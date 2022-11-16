@@ -29,6 +29,7 @@ struct TapeEquilibrium {
         return arrayOfDifferenceAfterSplit.min() ?? 0
         
     }
+
     // solution with 100% score
     
     
